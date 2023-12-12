@@ -1,39 +1,39 @@
-import Page from '@/components/page'
-import Section from '@/components/section'
+import React, { useState, useEffect } from 'react';
+import Page from '@/components/page';
+import Section from '@/components/section';
+import P5Canvas from '@/components/p5garden';
 
-const Garden = () => (
-	<Page>
-		<Section>
-			<h2 className='text-xl font-semibold'>Ingredients</h2>
+const Garden = () => {
+    const [loadCanvas, setLoadCanvas] = useState(false);
 
-			<div className='mt-2'>
-				<p className='text-zinc-600 dark:text-zinc-400'>
-					Like any good recipe, we appreciate community offerings to cultivate a
-					delicous dish.
-				</p>
-			</div>
-		</Section>
+    useEffect(() => {
+        // Delay the loading of P5Canvas
+        const timer = setTimeout(() => {
+            setLoadCanvas(true);
+        }, 100); // Adjust delay as needed
 
-		<Section>
-			<h3 className='font-medium'>Thanks to</h3>
+        return () => clearTimeout(timer);
+    }, []);
 
-			<ul className='list-disc space-y-2 px-6 py-2'>
-				<li className='text-sm text-zinc-600 dark:text-zinc-400'>
-					<a href='https://unsplash.com' className='underline'>
-						Unsplash
-					</a>{' '}
-					for high quality images
-				</li>
+    return (
+        <Page>
+            <Section>
+				<h2 className='text-xl font-semibold'>Garden</h2>
 
-				<li className='text-sm text-zinc-600 dark:text-zinc-400'>
-					<a href='https://teenyicons.com' className='underline'>
-						Teenyicons
-					</a>{' '}
-					for lovely icons
-				</li>
-			</ul>
-		</Section>
-	</Page>
-)
+				<div className='mt-2'>
+					<p className='text-zinc-600 dark:text-zinc-400'>
+						Like a real garden, you can plant and grow iris flowers.
+					</p>
+				</div>
+            </Section>
 
-export default Garden
+            {loadCanvas && (
+                <div className='flex justify-center mt-10 mb-10'>
+                    <P5Canvas />
+                </div>
+            )}
+        </Page>
+    );
+}
+
+export default Garden;
