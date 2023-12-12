@@ -4915,7 +4915,7 @@ packages:
       workbox-navigation-preload: 6.6.0
       workbox-precaching: 6.6.0
       workbox-range-requests: 6.6.0
-      workbox-recipes: 6.6.0
+      workbox-garden: 6.6.0
       workbox-routing: 6.6.0
       workbox-strategies: 6.6.0
       workbox-streams: 6.6.0
@@ -4973,7 +4973,7 @@ packages:
       workbox-core: 6.6.0
     dev: false
 
-  /workbox-recipes@6.6.0:
+  /workbox-garden@6.6.0:
     resolution: {integrity: sha512-TFi3kTgYw73t5tg73yPVqQC8QQjxJSeqjXRO4ouE/CeypmP2O/xqmB/ZFBBQazLTPxILUQ0b8aeh0IuxVn9a6A==}
     dependencies:
       workbox-cacheable-response: 6.6.0

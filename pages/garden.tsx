@@ -1,7 +1,7 @@
 import Page from '@/components/page'
 import Section from '@/components/section'
 
-const Recipes = () => (
+const Garden = () => (
 	<Page>
 		<Section>
 			<h2 className='text-xl font-semibold'>Ingredients</h2>
@@ -36,4 +36,4 @@ const Recipes = () => (
 	</Page>
 )
 
-export default Recipes
+export default Garden

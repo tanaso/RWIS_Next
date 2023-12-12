@@ -1,33 +1,23 @@
 import Page from '@/components/page'
 import Section from '@/components/section'
+import Button from '@mui/material/Button';
 
 const Index = () => (
 	<Page>
 		<Section>
-			<h2 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
-				We grow a lot of rice.
-			</h2>
-
-			<div className='mt-2'>
-				<p className='text-zinc-600 dark:text-zinc-400'>
-					You love rice, and so does the rest of the world. In the crop year
-					2008/2009, the milled rice production volume amounted to over{' '}
-					<span className='font-medium text-zinc-900 dark:text-zinc-50'>
-						448 million tons
-					</span>{' '}
-					worldwide.
-				</p>
-
-				<br />
-
-				<p className='text-sm text-zinc-600 dark:text-zinc-400'>
-					<a
-						href='https://github.com/mvllow/next-pwa-template'
-						className='underline'
-					>
-						Source
-					</a>
-				</p>
+			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', margin: '20px' }}>
+				<h1 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
+					Category A
+				</h1>
+				<Button variant="outlined" style={{ fontSize: '20px', padding: '10px 20px', color: 'green', borderColor: 'green', width: '70%', marginTop:'10%' }}>
+					TaskList
+				</Button>
+				<Button variant="outlined" style={{ fontSize: '20px', padding: '10px 20px', color: 'green', borderColor: 'green', width: '70%', marginTop:'10%' }}>
+					Garden
+				</Button>
+				<Button variant="outlined" style={{ fontSize: '20px', padding: '10px 20px', color: 'green', borderColor: 'green', width: '70%', marginTop:'10%' }}>
+					Encyclopedia
+				</Button>
 			</div>
 		</Section>
 	</Page>
