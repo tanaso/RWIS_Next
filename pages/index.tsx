@@ -1,6 +1,8 @@
 import Page from '@/components/page'
 import Section from '@/components/section'
 import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import Fab from '@mui/material/Fab';
 
 const Index = () => (
 	<Page>
@@ -19,6 +21,9 @@ const Index = () => (
 					Encyclopedia
 				</Button>
 			</div>
+			<Fab color="primary" aria-label="add" style={{ position: 'fixed', right: 20, bottom: 100, border: '1px solid white' }}>
+				<AddIcon />
+			</Fab>
 		</Section>
 	</Page>
 )
