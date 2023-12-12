@@ -19,7 +19,7 @@ const Encyclopedia = () => (
 					<a href='https://twosentencestories.com/vision' className='underline'>
 						Vision
 					</a>
-					, a two sentence story
+					, a two sentence encyclopedia
 				</p>
 			</div>
 		</Section>
