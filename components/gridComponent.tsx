@@ -16,21 +16,6 @@ const GridComponent: React.FC = () => {
         gap: '0px',
     };
 
-    const handleCellClick = (e: React.MouseEvent<HTMLDivElement>, cellIndex: string) => {
-        e.stopPropagation();
-        setActiveCell(cellIndex);
-
-        // Log the randomWater value of the clicked cell
-        const cellNumber = parseInt(cellIndex.replace('-', ''), 10);
-        console.log(`randomWater for cell ${cellIndex}:`, randomWaterValues[cellNumber]);
-    };
-
-    const handleClickOutside = (e: MouseEvent) => {
-        if (gridRef.current && !gridRef.current.contains(e.target as Node)) {
-            setActiveCell(null);
-        }
-    };
-
     useEffect(() => {
         setIsClient(true);
 
@@ -39,12 +24,28 @@ const GridComponent: React.FC = () => {
             Math.floor(Math.random() * 40)
         );
         setRandomWaterValues(initialRandomWaterValues);
-        
+
         window.addEventListener('click', handleClickOutside);
         return () => {
             window.removeEventListener('click', handleClickOutside);
         };
     }, []);
+
+    const handleCellClick = (e: React.MouseEvent<HTMLDivElement>, cellIndex: string) => {
+        e.stopPropagation();
+        setActiveCell(cellIndex);
+
+        const cellRow = parseInt(cellIndex.split('-')[0], 10);
+        const cellCol = parseInt(cellIndex.split('-')[1], 10);
+        const cellNumber = cellRow * gridSize + cellCol;
+        console.log(`randomWater for cell ${cellIndex}:`, randomWaterValues[cellNumber]);
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+        if (gridRef.current && !gridRef.current.contains(e.target as Node)) {
+            setActiveCell(null);
+        }
+    };
 
     const getImageSrc = (randomWater: number) => {
         if (randomWater === 0) {
@@ -101,7 +102,7 @@ const GridComponent: React.FC = () => {
         <div>
             <div ref={gridRef} style={gridContainerStyle}>{grid}</div>
             <br></br>
-            <h2>water: 12</h2>
+            <h2>water: {activeCell ? randomWaterValues[parseInt(activeCell.replace('-', ''), 10)] : 'N/A'}</h2>
         </div>
     );
 };
