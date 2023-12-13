@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
+import db from '../lib/db';
 
 interface P5CanvasProps {
     // Additional props if needed
@@ -9,6 +10,8 @@ const P5Canvas: React.FC<P5CanvasProps> = () => {
     const sketchRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+
+        
         let myP5: p5;
         let canvasWidth: number;
         let canvasHeight: number;

@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Page from '@/components/page';
 import Section from '@/components/section';
-import P5Canvas from '@/components/p5garden';
+import GridComponent from '@/components/gridComponent';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import ContentCutIcon from '@mui/icons-material/ContentCut';
+import { PiPlantBold } from "react-icons/pi";
 
 const Garden = () => {
-    const [loadCanvas, setLoadCanvas] = useState(false);
+    // const [loadCanvas, setLoadCanvas] = useState(false);
 
     useEffect(() => {
-        // Delay the loading of P5Canvas
-        const timer = setTimeout(() => {
-            setLoadCanvas(true);
-        }, 100); // Adjust delay as needed
 
-        return () => clearTimeout(timer);
     }, []);
 
     return (
@@ -25,13 +23,21 @@ const Garden = () => {
 						Like a real garden, you can plant and grow iris flowers.
 					</p>
 				</div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <WaterDropIcon/>
+                    <h2 style={{ marginRight: '20px' }}> 20</h2>
+                    <ContentCutIcon/>
+                    <h2 style={{ marginRight: '20px' }}> 5</h2>
+                    <PiPlantBold size={25}/>
+                    <h2> 5</h2>
+                </div>
+
             </Section>
 
-            {loadCanvas && (
-                <div className='flex justify-center mt-10 mb-10'>
-                    <P5Canvas />
-                </div>
-            )}
+            <div className='flex justify-center mt-10 mb-10'>
+                {/* <P5Canvas /> */}
+                <GridComponent />
+            </div>
         </Page>
     );
 }
