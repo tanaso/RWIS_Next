@@ -1,6 +1,6 @@
 export interface Flower{
     id?: number;
-    position: number;
-    color : string;
+    position: string;
+    color : number;
     waterPoints: number;
 }
