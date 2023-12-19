@@ -1,0 +1,30 @@
+/* Index.module.css */
+
+.flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .buttonStyle {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: green;
+    border-color: green;
+    width: 70%;
+    margin-top: 10%;
+  }
+  
+  .fabStyle {
+    position: fixed;
+    right: 20px;
+    border: 1px solid white;
+  }
+  
+  /* Additional styles for specific positions of FABs */
+  .bottom100 { bottom: 100px; }
+  .bottom170 { bottom: 170px; }
+  .bottom240 { bottom: 240px; }
+  
