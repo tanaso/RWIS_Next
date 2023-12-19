@@ -16,7 +16,6 @@ export class MyDatabase extends Dexie {
             flowers: '++id, color, waterPoints',
             users: '++id, waterPoints, numberOfSeeds, cuttingPoints',
             tasks: '++id, name, creationDate, deadline, periodInDays, categoryName, seedReward',
-            categories: ''
         });
 
         // Connect the class properties with the database tables

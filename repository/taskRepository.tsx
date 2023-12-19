@@ -3,7 +3,7 @@ import { Task } from '../model/Task';
 import { TaskPeriod, TaskPeriodStrategy } from "../model/TaskPeriod";
 
 // Function to bulk insert tasks
-export function bulkAddTasks(){
+export function bulkAddTasks() {
     const task1 = {
         name: "Task 1",
         creationDate: new Date(),
@@ -32,4 +32,12 @@ export function getAllTasks() {
             console.error('Failed to retrieve tasks:', err);
             throw err; // Rethrow the error for further handling
         });
+}
+
+export function deleteTask(taskId: number) {
+    return db.tasks.delete(taskId).then(() => {
+        console.log(`Task with ID ${taskId} deleted`);
+    }).catch((error) => {
+        console.error(`There was an error deleting the task: ${error}`);
+    });
 }

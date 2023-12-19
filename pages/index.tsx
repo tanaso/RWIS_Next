@@ -1,41 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Page from '@/components/page';
 import Section from '@/components/section';
 import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
+import Button from '@mui/material/Button';
 import styles from '../styles/Index.module.css';
-import {toggleAddButtonsVisibility, newTask, newCategory} from './index_component/indexLogic';
+import { toggleAddButtonsVisibility, newTask, newCategory, completeTask } from './index_component/indexLogic';
+import { Task } from "../model/Task";
+
+// Assuming getAllTasks is imported from somewhere
+import { getAllTasks } from '../repository/TaskRepository';
 
 const Index = () => {
 	const [isButtonClickable, setIsButtonClickable] = useState(false);
+	const [tasks, setTasks] = useState<Task[]>([]);
+
+
+	useEffect(() => {
+		const fetchTasks = async () => {
+			const fetchedTasks = await getAllTasks();
+			setTasks(fetchedTasks);
+		};
+
+		fetchTasks();
+	}, []);
 
 	const handleAdd = () => toggleAddButtonsVisibility(isButtonClickable, setIsButtonClickable);
 
-	const handleAddNewTask = () => newTask(isButtonClickable, setIsButtonClickable);
+	const handleAddNewTask = () => newTask(setTasks);
 
 	const handleAddNewCategory = () => newCategory(isButtonClickable, setIsButtonClickable);
+
+	const handleCompleteTask = async (taskId?: number) => completeTask(setTasks, taskId);
 
 	return (
 		<Page>
 			<Section>
-				{/* <div className={styles.flexColumnCenter}>
-					<h1 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
-						Category A
-					</h1>
-					<Button variant="outlined" className={styles.buttonStyle}>
-						TaskList
-					</Button>
-					<Button variant="outlined" className={styles.buttonStyle}>
-						Garden
-					</Button>
-					<Button variant="outlined" className={styles.buttonStyle}>
-						Encyclopedia
-					</Button>
-				</div> */}
+				<div className={styles.taskList}>
+					{tasks.map(task => (
+						<div key={task.id} className={styles.taskItem}>
+							<span>{task.name}</span>
+							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} className={styles.completeButton}>
+								Complete
+							</Button>
+						</div>
+					))}
+				</div>
 				<Fab color="primary" aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
 					<AddIcon />
 				</Fab>
-				{/* Conditional display can be streamlined */}
 				{isButtonClickable && (
 					<>
 						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
