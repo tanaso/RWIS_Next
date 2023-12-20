@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import { MdForest } from "react-icons/md";
 
 const BottomNav = () => {
 	const router = useRouter()
@@ -46,18 +47,7 @@ const links = [
 		label: 'Garden',
 		href: '/garden',
 		icon: (
-			<svg
-				viewBox='0 0 15 15'
-				fill='none'
-				xmlns='http://www.w3.org/2000/svg'
-				width='18'
-				height='18'
-			>
-				<path
-					d='M7.5 15V7m0 .5v3m0-3a4 4 0 00-4-4h-3v3a4 4 0 004 4h3m0-3h3a4 4 0 004-4v-3h-3a4 4 0 00-4 4v3zm0 0l4-4m-4 7l-4-4'
-					stroke='currentColor'
-				/>
-			</svg>
+			<MdForest size={23}/>
 		),
 	},
 	{

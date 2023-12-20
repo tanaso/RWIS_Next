@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const links = [
-	{ label: 'Encyclopedia', href: '/story' },
+	{ label: 'Encyclopedia', href: '/encyclopedia' },
 	{ label: 'Garden', href: '/garden' },
 ]
 
