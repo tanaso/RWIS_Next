@@ -1,14 +1,18 @@
 import { Task } from "@/model/Task";
-import { bulkAddTasks, getAllTasks, deleteTask } from "../../repository/TaskRepository";
+import { bulkAddTasks, getAllTasks, deleteTask } from "../../repository/taskRepository";
 export const toggleAddButtonsVisibility = (isButtonClickable: boolean, setIsButtonClickable: React.Dispatch<React.SetStateAction<boolean>>) => {
     setIsButtonClickable(!isButtonClickable);
 };
 
-export const newTask = (setTasks: React.Dispatch<React.SetStateAction<Task[]>>) => {
+export const newTask = (setTasks: React.Dispatch<React.SetStateAction<Task[]>>, task: Task) => {
     // bulkAddTasks();
 
     console.log("all tasks: " + getAllTasks());
 };
+
+export const nenewTaskRouter = () => {
+
+}
 
 export const newCategory = (isButtonClickable: boolean, setIsButtonClickable: React.Dispatch<React.SetStateAction<boolean>>) => {
 

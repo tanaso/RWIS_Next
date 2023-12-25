@@ -5,15 +5,17 @@ import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
 import Button from '@mui/material/Button';
 import styles from '../styles/Index.module.css';
-import { toggleAddButtonsVisibility, newTask, newCategory, completeTask } from './index_component/indexLogic';
+import { toggleAddButtonsVisibility, newTask, newCategory, completeTask } from '../components/index_component/indexLogic';
 import { Task } from "../model/Task";
+import { useRouter } from 'next/router';
 
 // Assuming getAllTasks is imported from somewhere
-import { getAllTasks } from '../repository/TaskRepository';
+import { getAllTasks } from '../repository/taskRepository';
 
 const Index = () => {
 	const [isButtonClickable, setIsButtonClickable] = useState(false);
 	const [tasks, setTasks] = useState<Task[]>([]);
+	const router = useRouter();
 
 
 	useEffect(() => {
@@ -27,7 +29,9 @@ const Index = () => {
 
 	const handleAdd = () => toggleAddButtonsVisibility(isButtonClickable, setIsButtonClickable);
 
-	const handleAddNewTask = () => newTask(setTasks);
+	const handleAddNewTask = () => {
+        router.push('/new-task');
+    };
 
 	const handleAddNewCategory = () => newCategory(isButtonClickable, setIsButtonClickable);
 
