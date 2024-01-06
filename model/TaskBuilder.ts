@@ -24,11 +24,6 @@ export class TaskBuilder {
         return this;
     }
 
-    setCreationDate(creationDate: Date): TaskBuilder {
-        this.creationDate = creationDate;
-        return this;
-    }
-
     setDeadline(deadline: Date): TaskBuilder {
         this.deadline = deadline;
         return this;

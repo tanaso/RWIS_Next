@@ -19,6 +19,18 @@ export class Task {
         this.seedReward = builder.seedReward;
         this.creationDate = builder.creationDate;
     }
+
+    toString() {
+        return `Task {
+            id: ${this.id},
+            name: ${this.name},
+            deadline: ${this.deadline ? this.deadline.toISOString() : 'undefined'},
+            period: ${this.period ? this.period.toString() : 'undefined'},
+            categoryName: ${this.categoryName},
+            seedReward: ${this.seedReward},
+            creationDate: ${this.creationDate ? this.creationDate.toISOString() : 'undefined'}
+        }`;
+    }
     
 
     static Builder(name: string) {

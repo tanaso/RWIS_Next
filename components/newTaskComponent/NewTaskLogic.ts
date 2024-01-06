@@ -1,7 +1,10 @@
 import { TaskPeriod, TaskPeriodStrategy } from "@/model/TaskPeriod";
 import { Task } from "../../model/Task";
+import { addNewTask } from "@/repository/taskRepository";
 
-export const newTaskLogic = (newTaskDTO : NewTaskDTO) => {
+
+
+export const newTaskLogic = async (newTaskDTO : NewTaskDTO) => {
     //map and create new task
     let period = 0;
     try {
@@ -14,9 +17,16 @@ export const newTaskLogic = (newTaskDTO : NewTaskDTO) => {
     let taskPeriod = new TaskPeriod(period, TaskPeriodStrategy.DAYS); //TODO expand this behavoir
     
     let newTask = Task.Builder(newTaskDTO.name)
-        .setDeadline(newTaskDTO.deadline) //convert from string to Date
+        .setDeadline(new Date(newTaskDTO.deadline)) //convert from string to Date
+        .setPeriod(taskPeriod)
         .build();
 
+    try {
+        await addNewTask(newTask);
+        console.log('Task created');
+    } catch (error) {
+        console.error('Error creating task:', error);
+    }
 };
 
 export const formatDate = (date : Date) => {

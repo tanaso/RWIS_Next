@@ -41,3 +41,15 @@ export function deleteTask(taskId: number) {
         console.error(`There was an error deleting the task: ${error}`);
     });
 }
+
+// Add a function to create a new task
+export function addNewTask(newTask: Task) {
+    return db.tasks.add(newTask)
+        .then(() => {
+            console.log('New task added successfully');
+        })
+        .catch(err => {
+            console.error('Failed to add new task:', err);
+            throw err; // Rethrow the error for further handling
+        });
+}

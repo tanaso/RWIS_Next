@@ -1,7 +1,7 @@
 interface NewTaskDTO {
     name: string,
-    period: string,
     deadline: string,
+    period: string,
 }
 
 //TODO manage optional parameters
