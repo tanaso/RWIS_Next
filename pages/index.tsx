@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Page from '@/components/page';
 import Section from '@/components/section';
 import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Fab from '@mui/material/Fab';
 import Button from '@mui/material/Button';
 import styles from '../styles/Index.module.css';
-import { toggleAddButtonsVisibility, newCategory, completeTask } from '../components/index_component/indexLogic';
+import { toggleAddButtonsVisibility, newCategory, completeTask, deleteTask, getTasks } from '../components/index_component/indexLogic';
 import { Task } from "../model/Task";
 import { useRouter } from 'next/router';
-import { initializeUser, getUser } from '../repository/userRepository';
-
-// Assuming getAllTasks is imported from somewhere
-import { getAllTasks } from '../repository/taskRepository';
 
 const Index = () => {
 	const [isButtonClickable, setIsButtonClickable] = useState(false);
@@ -21,7 +18,7 @@ const Index = () => {
 
 	useEffect(() => {
 		const fetchTasks = async () => {
-			const fetchedTasks = await getAllTasks();
+			const fetchedTasks = await getTasks();
 			setTasks(fetchedTasks);
 		};
 
@@ -38,6 +35,8 @@ const Index = () => {
 
 	const handleCompleteTask = async (taskId?: number) => completeTask(setTasks, taskId);
 
+	const handleDeleteTask = async (taskId?: number) => deleteTask(setTasks, taskId);
+
 	return (
 		<Page>
 			<Section>
@@ -47,6 +46,9 @@ const Index = () => {
 							<span>{task.name}</span>
 							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} className={styles.completeButton}>
 								Complete
+							</Button>
+							<Button variant="contained" color="primary" onClick={() => handleDeleteTask(task.id)}>
+								<DeleteIcon />
 							</Button>
 						</div>
 					))}

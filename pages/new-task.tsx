@@ -4,8 +4,8 @@ import Section from '@/components/section';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import styles from '../styles/Index.module.css';
-import { formatDate, newTaskLogic } from "../components/newTaskComponent/NewTaskLogic";
-import { useRouter } from 'next/router'; // Import useRouter
+import { newTaskLogic } from "../components/newTaskComponent/NewTaskLogic";
+import { useRouter } from 'next/router';
 
 const NewTask = () => {
     const [name, setName] = useState('');
@@ -19,11 +19,9 @@ const NewTask = () => {
 
         try {
             await newTaskLogic({ name, period, deadline });
-            // Task creation successful
-            setError(''); // Reset error message
-            router.push('/'); // Redirect to index page
+            setError(''); 
+            router.push('/');
         } catch (error: any) {
-            // Handle errors
             setError(error.message);
         }
     };

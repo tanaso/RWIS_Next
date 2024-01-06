@@ -34,7 +34,7 @@ export function getAllTasks() {
         });
 }
 
-export function deleteTask(taskId: number) {
+export function deleteTaskById(taskId: number) {
     return db.tasks.delete(taskId).then(() => {
         console.log(`Task with ID ${taskId} deleted`);
     }).catch((error) => {

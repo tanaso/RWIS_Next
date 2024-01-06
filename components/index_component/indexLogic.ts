@@ -1,5 +1,6 @@
 import { Task } from "@/model/Task";
-import { bulkAddTasks, getAllTasks, deleteTask } from "../../repository/taskRepository";
+import { getAllTasks, deleteTaskById } from "../../repository/taskRepository";
+import { addCuttingPoint, addWaterPoint } from "@/repository/userRepository";
 export const toggleAddButtonsVisibility = (isButtonClickable: boolean, setIsButtonClickable: React.Dispatch<React.SetStateAction<boolean>>) => {
     setIsButtonClickable(!isButtonClickable);
 };
@@ -8,16 +9,20 @@ export const newCategory = (isButtonClickable: boolean, setIsButtonClickable: Re
 
 };
 
+export function getTasks(){ // Needed to separate presentation layer and persistency layer
+    return getAllTasks();
+};
+
 export const completeTask = async (setTasks: React.Dispatch<React.SetStateAction<Task[]>>, taskId?: number) => {
     if (taskId === undefined || taskId == null) {
         console.error('Error: taskId is not provided');
         return;
     }
     
-
-
     try {
-        await deleteTask(taskId); 
+        await deleteTaskById(taskId);
+        addCuttingPoint();
+        addWaterPoint();
         refreshTaskList(setTasks);
     } catch (error) {
         console.error('Failed to complete the task:', error);
@@ -25,6 +30,21 @@ export const completeTask = async (setTasks: React.Dispatch<React.SetStateAction
     console.log(`Complete task ${taskId}`);
     
     // TODO Further improvement: state design pattern for TODO, COMPLETED, DELETED status
+}
+
+export const deleteTask = async (setTasks: React.Dispatch<React.SetStateAction<Task[]>>, taskId?: number) => {
+    if (taskId === undefined || taskId == null) {
+        console.error('Error: taskId is not provided');
+        return;
+    }
+    
+    try {
+        await deleteTaskById(taskId);
+        refreshTaskList(setTasks);
+    } catch (error) {
+        console.error('Failed to delete the task:', error);
+    }
+    console.log(`Deleted task ${taskId}`);
 }
 
 const refreshTaskList = async (setTasks: React.Dispatch<React.SetStateAction<Task[]>>) => {
@@ -35,4 +55,3 @@ const refreshTaskList = async (setTasks: React.Dispatch<React.SetStateAction<Tas
         console.error('Failed to refresh tasks:', error);
     }
 };
-
