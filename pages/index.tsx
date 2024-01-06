@@ -8,6 +8,7 @@ import styles from '../styles/Index.module.css';
 import { toggleAddButtonsVisibility, newCategory, completeTask } from '../components/index_component/indexLogic';
 import { Task } from "../model/Task";
 import { useRouter } from 'next/router';
+import { initializeUser, getUser } from '../repository/userRepository';
 
 // Assuming getAllTasks is imported from somewhere
 import { getAllTasks } from '../repository/taskRepository';

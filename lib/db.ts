@@ -2,7 +2,6 @@ import Dexie, { Table } from 'dexie';
 import { Task } from '../model/Task';
 import { Flower } from '../model/Flower';
 import { User } from '../model/User';
-import { TaskPeriod, TaskPeriodStrategy } from "../model/TaskPeriod";
 
 // Extend Dexie class with typed tables
 export class MyDatabase extends Dexie {
@@ -12,7 +11,7 @@ export class MyDatabase extends Dexie {
 
     constructor() {
         super('myDatabase');
-        this.version(1).stores({
+        this.version(3).stores({
             flowers: '++id, color, waterPoints',
             users: '++id, waterPoints, numberOfSeeds, cuttingPoints',
             tasks: '++id, name, creationDate, deadline, periodInDays, categoryName, seedReward',
