@@ -1,6 +1,6 @@
 import { Task } from "@/model/Task";
-import { getAllTasks, deleteTaskById } from "../../repository/taskRepository";
-import { addCuttingPoint, addWaterPoint } from "@/repository/userRepository";
+import { getAllTasks, deleteTaskById, getTaskById } from "../../repository/taskRepository";
+import { addPoints } from "@/repository/userRepository";
 export const toggleAddButtonsVisibility = (isButtonClickable: boolean, setIsButtonClickable: React.Dispatch<React.SetStateAction<boolean>>) => {
     setIsButtonClickable(!isButtonClickable);
 };
@@ -20,14 +20,12 @@ export const completeTask = async (setTasks: React.Dispatch<React.SetStateAction
     }
     
     try {
+        await addPoints((await getTaskById(taskId)).seedReward);
         await deleteTaskById(taskId);
-        addCuttingPoint();
-        addWaterPoint();
         refreshTaskList(setTasks);
     } catch (error) {
         console.error('Failed to complete the task:', error);
     }
-    console.log(`Complete task ${taskId}`);
     
     // TODO Further improvement: state design pattern for TODO, COMPLETED, DELETED status
 }

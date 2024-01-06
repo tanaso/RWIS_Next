@@ -11,7 +11,7 @@ export class MyDatabase extends Dexie {
 
     constructor() {
         super('myDatabase');
-        this.version(3).stores({
+        this.version(5).stores({
             flowers: '++id, color, waterPoints',
             users: '++id, waterPoints, numberOfSeeds, cuttingPoints',
             tasks: '++id, name, creationDate, deadline, periodInDays, categoryName, seedReward',
