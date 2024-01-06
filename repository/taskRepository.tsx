@@ -42,7 +42,6 @@ export function deleteTask(taskId: number) {
     });
 }
 
-// Add a function to create a new task
 export function addNewTask(newTask: Task) {
     return db.tasks.add(newTask)
         .then(() => {
@@ -53,3 +52,21 @@ export function addNewTask(newTask: Task) {
             throw err; // Rethrow the error for further handling
         });
 }
+
+export function getTaskById(taskId: number) {
+    return db.tasks.get(taskId)
+        .then(task => {
+            if (task) {
+                console.log(`Task with ID ${taskId} retrieved successfully`, task);
+                return task;
+            } else {
+                console.log(`No task found with ID ${taskId}`);
+                throw new Error(`No task found`); 
+            }
+        })
+        .catch(err => {
+            console.error(`Failed to retrieve task with ID ${taskId}:`, err);
+            throw err; 
+        });
+}
+

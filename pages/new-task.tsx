@@ -11,15 +11,21 @@ const NewTask = () => {
     const [name, setName] = useState('');
     const [period, setPeriod] = useState('');
     const [deadline, setDeadline] = useState('');
+    const [error, setError] = useState('');
     const router = useRouter();
 
-    const handleNewTaskSubmit = (event: any) => {
+    const handleNewTaskSubmit = async (event: any) => {
         event.preventDefault();
-        newTaskLogic({ name, period, deadline });
-        setName('');
-        setDeadline(formatDate(new Date()));
-        setPeriod('');
-        router.push('/');
+
+        try {
+            await newTaskLogic({ name, period, deadline });
+            // Task creation successful
+            setError(''); // Reset error message
+            router.push('/'); // Redirect to index page
+        } catch (error: any) {
+            // Handle errors
+            setError(error.message);
+        }
     };
 
     return (
@@ -62,6 +68,7 @@ const NewTask = () => {
                         InputLabelProps={{ className: styles.whiteText }}
                         inputProps={{ className: styles.whiteText }}
                     />
+                    {error && <div className={styles.errorMessage}>{error}</div>}
                     <Button type="submit" variant="contained" color="primary" className={styles.whiteText}>
                         Create Task
                     </Button>

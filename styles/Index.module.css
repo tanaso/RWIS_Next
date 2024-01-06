@@ -1,5 +1,3 @@
-/* Index.module.css */
-
 .flexColumnCenter {
   display: flex;
   flex-direction: column;
@@ -48,8 +46,8 @@
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #333; /* Changed to a darker background */
-  color: white; /* White text for better readability */
+  background-color: #333;
+  color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -66,14 +64,16 @@
   background-color: #4CAF50;
 }
 
-/* New class for white text */
+
 .whiteText {
   color: white;
 }
 
-/* Additional styles if needed */
 .darkBackground {
-  background-color: #333; /* Dark background for contrast with white text */
+  background-color: #333;
 }
 
-/* Modify existing classes or add new ones as per your design requirements */
+.errorMessage {
+  color: red;
+  margin: 10px 0;
+}

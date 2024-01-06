@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
 import Button from '@mui/material/Button';
 import styles from '../styles/Index.module.css';
-import { toggleAddButtonsVisibility, newTask, newCategory, completeTask } from '../components/index_component/indexLogic';
+import { toggleAddButtonsVisibility, newCategory, completeTask } from '../components/index_component/indexLogic';
 import { Task } from "../model/Task";
 import { useRouter } from 'next/router';
 
