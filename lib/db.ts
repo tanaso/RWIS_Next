@@ -11,16 +11,46 @@ export class MyDatabase extends Dexie {
 
     constructor() {
         super('myDatabase');
-        this.version(5).stores({
+        this.version(7).stores({
             flowers: '++id, color, waterPoints',
             users: '++id, waterPoints, numberOfSeeds, cuttingPoints',
             tasks: '++id, name, creationDate, deadline, periodInDays, categoryName, seedReward',
+            categories: '++id, &name',
         });
 
         // Connect the class properties with the database tables
         this.flowers = this.table('flowers');
         this.users = this.table('users');
         this.tasks = this.table('tasks');
+
+        this.setupHooks();
+    }
+
+    private setupHooks(): void {
+        this.users.hook('updating', (modifications, primaryKey, obj, transaction) => {
+            const updates = modifications as Partial<User>;
+
+            if (modifications.hasOwnProperty('waterPoints')) {
+                const newWaterPoints: number = updates.waterPoints as number;
+                if (newWaterPoints < 0) {
+                    throw new Error("waterPoints must not be negative");
+                }
+            }
+
+            if (modifications.hasOwnProperty('cuttingPoints')) {
+                const newCuttingPoints: number = updates.cuttingPoints as number;
+                if (newCuttingPoints < 0) {
+                    throw new Error("cuttingPoints must not be negative");
+                }
+            }
+
+            if (modifications.hasOwnProperty('numberOfSeeds')) {
+                const newNumberOfSeeds: number = updates.numberOfSeeds as number;
+                if (newNumberOfSeeds < 0) {
+                    throw new Error("numberOfSeeds must not be negative");
+                }
+            }
+        });
     }
 }
 
