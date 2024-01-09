@@ -46,8 +46,8 @@
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #333;
-  color: white;
+  background-color: #D0EFDB;
+  color: #2A6B41;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -66,7 +66,7 @@
 
 
 .whiteText {
-  color: white;
+  color: #2A6B41;
 }
 
 .darkBackground {
