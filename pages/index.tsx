@@ -40,6 +40,8 @@ const Index = () => {
 	const handleDeleteTask = async (taskId?: number) => deleteTask(setTasks, taskId);
 
 	return (
+		<div style={{ backgroundColor: '#D0EFDB', height: '100vh' }}>
+
 		<Page>
 			<Section>
 				<div className={styles.taskList}>
@@ -49,13 +51,13 @@ const Index = () => {
 							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} className={styles.completeButton}>
 								Complete
 							</Button>
-							<Button variant="contained" color="primary" onClick={() => handleDeleteTask(task.id)}>
+							<Button variant="contained" color="primary" onClick={() => handleDeleteTask(task.id)} className = {styles.deleteButton} >
 								<DeleteIcon />
 							</Button>
 						</div>
 					))}
 				</div>
-				<Fab color="primary" aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
+				<Fab aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
 					<AddIcon />
 				</Fab>
 				{isButtonClickable && (
@@ -72,6 +74,7 @@ const Index = () => {
 				)}
 			</Section>
 		</Page>
+		</div>
 	);
 }
 
