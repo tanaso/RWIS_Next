@@ -7,6 +7,8 @@ import styles from '../styles/Index.module.css';
 import {toggleAddButtonsVisibility, newTask, newCategory} from './index_component/indexLogic';
 
 const Index = () => {
+	
+	
 	const [isButtonClickable, setIsButtonClickable] = useState(false);
 
 	const handleAdd = () => toggleAddButtonsVisibility(isButtonClickable, setIsButtonClickable);
@@ -17,8 +19,11 @@ const Index = () => {
 
 	return (
 		<div style={{ backgroundColor: '#D0EFDB' }}>
-			<Page>
+			<Page> 
 				<Section>
+				<div style={{ textAlign: 'center' }}>
+            	<h1 style={{ fontSize: '3em', marginBottom: '5px', color: '#2A6B41', fontWeight: 'bold' }}>Task List</h1>
+				</div>
 					{/* <div className={styles.flexColumnCenter}>
 						<h1 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
 							Category A
@@ -53,6 +58,7 @@ const Index = () => {
 			</Page>
 		</div>
 	);
+	
 }
 
 export default Index;
