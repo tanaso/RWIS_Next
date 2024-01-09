@@ -16,40 +16,42 @@ const Index = () => {
 	const handleAddNewCategory = () => newCategory(isButtonClickable, setIsButtonClickable);
 
 	return (
-		<Page>
-			<Section>
-				{/* <div className={styles.flexColumnCenter}>
-					<h1 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
-						Category A
-					</h1>
-					<Button variant="outlined" className={styles.buttonStyle}>
-						TaskList
-					</Button>
-					<Button variant="outlined" className={styles.buttonStyle}>
-						Garden
-					</Button>
-					<Button variant="outlined" className={styles.buttonStyle}>
-						Encyclopedia
-					</Button>
-				</div> */}
-				<Fab color="primary" aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
-					<AddIcon />
-				</Fab>
-				{/* Conditional display can be streamlined */}
-				{isButtonClickable && (
-					<>
-						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
-							<AddIcon />
-							<span className='fabText'>New Task</span>
-						</Fab>
-						<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom240}`}>
-							<AddIcon />
-							<span className='fabText'>New Category</span>
-						</Fab>
-					</>
-				)}
-			</Section>
-		</Page>
+		<div style={{ backgroundColor: '#D0EFDB' }}>
+			<Page>
+				<Section>
+					{/* <div className={styles.flexColumnCenter}>
+						<h1 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
+							Category A
+						</h1>
+						<Button variant="outlined" className={styles.buttonStyle}>
+							TaskList
+						</Button>
+						<Button variant="outlined" className={styles.buttonStyle}>
+							Garden
+						</Button>
+						<Button variant="outlined" className={styles.buttonStyle}>
+							Encyclopedia
+						</Button>
+					</div> */}
+					<Fab color="primary" aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
+						<AddIcon />
+					</Fab>
+					{/* Conditional display can be streamlined */}
+					{isButtonClickable && (
+						<>
+							<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
+								<AddIcon />
+								<span className='fabText'>New Task</span>
+							</Fab>
+							<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom240}`}>
+								<AddIcon />
+								<span className='fabText'>New Category</span>
+							</Fab>
+						</>
+					)}
+				</Section>
+			</Page>
+		</div>
 	);
 }
 
