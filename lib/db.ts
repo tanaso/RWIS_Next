@@ -2,12 +2,14 @@ import Dexie, { Table } from 'dexie';
 import { Task } from '../model/Task';
 import { Flower } from '../model/Flower';
 import { User } from '../model/User';
+import { Category } from '@/model/Category';
 
 // Extend Dexie class with typed tables
 export class MyDatabase extends Dexie {
     flowers!: Table<Flower, number>; // 'number' is the type of the primary key
     users!: Table<User, number>;
     tasks!: Table<Task, number>;
+    categories!: Table<Category, number>;
 
     constructor() {
         super('myDatabase');
@@ -22,6 +24,7 @@ export class MyDatabase extends Dexie {
         this.flowers = this.table('flowers');
         this.users = this.table('users');
         this.tasks = this.table('tasks');
+        this.categories = this.table('categories');
 
         this.setupHooks();
     }

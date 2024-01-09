@@ -19,9 +19,15 @@ export const newTaskLogic = async (newTaskDTO: NewTaskDTO) => {
         throw new Error("Deadline is in the past. Please choose a future date.");
     }
 
+    const category = newTaskDTO.category;
+    if(category === undefined || category.trim() === ''){
+        throw new Error("category name not correct");
+    }
+
     let newTask = Task.Builder(newTaskDTO.name)
         .setDeadline(deadline)
         .setPeriod(taskPeriod)
+        .setCategoryName(category)
         .setSeedReward(randomBoolean())
         .build();
 

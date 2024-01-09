@@ -31,7 +31,9 @@ const Index = () => {
         router.push('/new-task');
     };
 
-	const handleAddNewCategory = () => newCategory(isButtonClickable, setIsButtonClickable);
+	const handleAddNewCategory = () => {
+		router.push('/new-category');
+	}
 
 	const handleCompleteTask = async (taskId?: number) => completeTask(setTasks, taskId);
 
@@ -43,7 +45,7 @@ const Index = () => {
 				<div className={styles.taskList}>
 					{tasks.map(task => (
 						<div key={task.id} className={styles.taskItem}>
-							<span>{task.name}</span>
+							<span>{task.name} - {task.categoryName}</span>
 							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} className={styles.completeButton}>
 								Complete
 							</Button>
