@@ -1,30 +1,79 @@
-/* Index.module.css */
-
 .flexColumnCenter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 20px;
-  }
-  
-  .buttonStyle {
-    font-size: 20px;
-    padding: 10px 20px;
-    color: green;
-    border-color: green;
-    width: 70%;
-    margin-top: 10%;
-  }
-  
-  .fabStyle {
-    position: fixed;
-    right: 20px;
-    border: 1px solid white;
-  }
-  
-  /* Additional styles for specific positions of FABs */
-  .bottom100 { bottom: 100px; }
-  .bottom170 { bottom: 170px; }
-  .bottom240 { bottom: 240px; }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.buttonStyle {
+  font-size: 20px;
+  padding: 10px 20px;
+  color: green;
+  border-color: green;
+  width: 70%;
+  margin-top: 10%;
+}
+
+.fabStyle {
+  position: fixed;
+  right: 20px;
+  border: 1px solid white;
+}
+
+.bottom100 {
+  bottom: 100px;
+}
+
+.bottom170 {
+  bottom: 170px;
+}
+
+.bottom240 {
+  bottom: 240px;
+}
+
+.taskList {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #D0EFDB;
+  color: #2A6B41;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.taskName {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.completeButton {
+  margin-left: auto;
+  color: #ffffff;
+  background-color: #4CAF50;
+}
+
+
+.whiteText {
+  color: #2A6B41;
+}
+
+.darkBackground {
+  background-color: #333;
+}
+
+.errorMessage {
+  color: red;
+  margin: 10px 0;
+}
