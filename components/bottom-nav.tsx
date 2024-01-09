@@ -17,12 +17,12 @@ const BottomNav = () => {
 							href={href}
 							className={`flex h-full w-full flex-col items-center justify-center space-y-1 ${
 								router.pathname === href
-									? 'text-indigo-500 dark:text-indigo-400'
-									: 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50'
+									? 'text-soil-color'
+									: 'text-bg-color'
 							}`}
 						>
 							{icon}
-							<span className='text-xs text-zinc-600 dark:text-zinc-400'>
+							<span className='text-xs text-bg-color'>
 								{label}
 							</span>
 						</Link>

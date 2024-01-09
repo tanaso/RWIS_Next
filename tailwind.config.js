@@ -10,6 +10,7 @@ module.exports = {
 		  colors: {
 			'bg-color': '#D0EFDB',
 			'text-color': '#2A6B41',
+			'soil-color': '#FFFFFF'
 		  }
 		}
 	  },

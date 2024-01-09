@@ -99,7 +99,7 @@ export default Garden;
 
 
 return (
-    <div style={{ backgroundColor: '#D0EFDB' }}>
+    <div style={{ backgroundColor: '#D0EFDB', height:"100vh" }}>
       <Page>
         <Section>
           <div style={{ textAlign: 'center' }}>
