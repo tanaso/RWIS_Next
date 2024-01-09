@@ -17,6 +17,7 @@ export const newTaskLogic = (newTaskDTO : NewTaskDTO) => {
         .setDeadline(newTaskDTO.deadline) //convert from string to Date
         .build();
 
+    console.log("New task created: " + newTask);
 };
 
 export const formatDate = (date : Date) => {

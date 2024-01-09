@@ -4,7 +4,7 @@ import { Task } from "../model/Task";
 export class TaskBuilder {
     id?: number;
     name: string = '';
-    deadline?: Date;
+    deadline?: string;
     period?: TaskPeriod;
     categoryName?: string;
     seedReward: boolean = false;
@@ -29,7 +29,7 @@ export class TaskBuilder {
         return this;
     }
 
-    setDeadline(deadline: Date): TaskBuilder {
+    setDeadline(deadline: string): TaskBuilder {
         this.deadline = deadline;
         return this;
     }

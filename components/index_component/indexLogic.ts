@@ -10,7 +10,7 @@ export const newTask = (setTasks: React.Dispatch<React.SetStateAction<Task[]>>, 
     console.log("all tasks: " + getAllTasks());
 };
 
-export const nenewTaskRouter = () => {
+export const newTaskRouter = () => {
 
 }
 

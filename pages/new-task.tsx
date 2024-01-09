@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { formatDate, newTaskLogic } from "../components/newTaskComponent/NewTaskLogic";
 import { format } from 'util';
+import { AddTasks } from '@/repository/taskRepository';
+import { Task } from '../model/Task';
 
 const NewTask = () => {
     const [name, setName] = useState('');
     const [period, setPeriod] = useState('');
-    const [deadline, setDeadline] = useState('');
+    const [deadline, setDeadline] = useState(formatDate(new Date()));
 
     const handleNewTaskSubmit = (event: any) => {
         event.preventDefault(); // Prevent the default form submission
@@ -13,8 +15,19 @@ const NewTask = () => {
         // Here you can handle the submission of the form
         console.log("Task Details:", { name, period, deadline });
 
+        // New task object
+        const newTask: Task = {
+            name: name,
+            deadline: deadline,
+            period: period,
+            seedReward: true
+        };
+
 		//call to business logic
 		newTaskLogic({name, period, deadline});
+
+        // Bulk add the new tasks to the table
+        AddTasks();
 
         // Reset the form fields after submission
         setName('');
@@ -40,7 +53,7 @@ const NewTask = () => {
                     id="deadline" 
 					type="date"
                     value={deadline}
-                    onChange={(e) => setDeadline(e.target.value)}
+                    onChange={(e) => setDeadline(new Date(e.target.value).toISOString().split('T')[0])}
                     placeholder="Deadline"
                 />
             </div>
