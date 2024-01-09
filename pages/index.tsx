@@ -44,6 +44,9 @@ const Index = () => {
 
 		<Page>
 			<Section>
+			<div style={{ textAlign: 'center' }}>
+			<h1 style={{ fontSize: '3em', marginBottom: '50px', color: '#2A6B41', fontWeight: 'bold' }}>Task List</h1>
+			</div>
 				<div className={styles.taskList}>
 					{tasks.map(task => (
 						<div key={task.id} className={styles.taskItem}>
