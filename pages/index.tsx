@@ -11,6 +11,8 @@ import { Task } from "../model/Task";
 import { useRouter } from 'next/router';
 
 const Index = () => {
+	
+	
 	const [isButtonClickable, setIsButtonClickable] = useState(false);
 	const [tasks, setTasks] = useState<Task[]>([]);
 	const router = useRouter();
@@ -40,39 +42,47 @@ const Index = () => {
 	const handleDeleteTask = async (taskId?: number) => deleteTask(setTasks, taskId);
 
 	return (
-		<Page>
-			<Section>
-				<div className={styles.taskList}>
-					{tasks.map(task => (
-						<div key={task.id} className={styles.taskItem}>
-							<span>{task.name} - {task.categoryName}</span>
-							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} className={styles.completeButton}>
-								Complete
-							</Button>
-							<Button variant="contained" color="primary" onClick={() => handleDeleteTask(task.id)}>
-								<DeleteIcon />
-							</Button>
-						</div>
-					))}
+		<div style={{ backgroundColor: '#D0EFDB' }}>
+			<Page> 
+				<Section>
+				<div style={{ textAlign: 'center' }}>
+            	<h1 style={{ fontSize: '3em', marginBottom: '5px', color: '#2A6B41', fontWeight: 'bold' }}>Task List</h1>
 				</div>
-				<Fab color="primary" aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
-					<AddIcon />
-				</Fab>
-				{isButtonClickable && (
-					<>
-						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
-							<AddIcon />
-							<span className='fabText'>New Task</span>
-						</Fab>
-						<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom240}`}>
-							<AddIcon />
-							<span className='fabText'>New Category</span>
-						</Fab>
-					</>
-				)}
-			</Section>
-		</Page>
+					{/* <div className={styles.flexColumnCenter}>
+						<h1 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
+							Category A
+						</h1>
+						<Button variant="outlined" className={styles.buttonStyle}>
+							TaskList
+						</Button>
+						<Button variant="outlined" className={styles.buttonStyle}>
+							Garden
+						</Button>
+						<Button variant="outlined" className={styles.buttonStyle}>
+							Encyclopedia
+						</Button>
+					</div> */}
+					<Fab color="primary" aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
+						<AddIcon />
+					</Fab>
+					{/* Conditional display can be streamlined */}
+					{isButtonClickable && (
+						<>
+							<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
+								<AddIcon />
+								<span className='fabText'>New Task</span>
+							</Fab>
+							<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom240}`}>
+								<AddIcon />
+								<span className='fabText'>New Category</span>
+							</Fab>
+						</>
+					)}
+				</Section>
+			</Page>
+		</div>
 	);
+	
 }
 
 export default Index;
