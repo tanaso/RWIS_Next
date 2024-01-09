@@ -3,7 +3,7 @@ import { Task } from '../model/Task';
 import { TaskPeriod, TaskPeriodStrategy } from "../model/TaskPeriod";
 
 // Function to bulk insert tasks
-export function bulkAddTasks(){
+export function bulkAddTasks() {
     const task1 = {
         name: "Task 1",
         creationDate: new Date(),
@@ -33,3 +33,40 @@ export function getAllTasks() {
             throw err; // Rethrow the error for further handling
         });
 }
+
+export function deleteTaskById(taskId: number) {
+    return db.tasks.delete(taskId).then(() => {
+        console.log(`Task with ID ${taskId} deleted`);
+    }).catch((error) => {
+        console.error(`There was an error deleting the task: ${error}`);
+    });
+}
+
+export function addNewTask(newTask: Task) {
+    return db.tasks.add(newTask)
+        .then(() => {
+            console.log('New task added successfully');
+        })
+        .catch(err => {
+            console.error('Failed to add new task:', err);
+            throw err; // Rethrow the error for further handling
+        });
+}
+
+export function getTaskById(taskId: number) {
+    return db.tasks.get(taskId)
+        .then(task => {
+            if (task) {
+                console.log(`Task with ID ${taskId} retrieved successfully`, task);
+                return task;
+            } else {
+                console.log(`No task found with ID ${taskId}`);
+                throw new Error(`No task found`); 
+            }
+        })
+        .catch(err => {
+            console.error(`Failed to retrieve task with ID ${taskId}:`, err);
+            throw err; 
+        });
+}
+

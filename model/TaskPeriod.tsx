@@ -36,6 +36,12 @@ export class TaskPeriod {
     years(): number {
         return this.periodInDays / 365; // This is an approximation
     }
+
+    toString() {
+        return `TaskPeriod {
+            periodInDays: ${this.periodInDays},
+        }`;
+    }
 }
 
 export enum TaskPeriodStrategy {
