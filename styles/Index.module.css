@@ -19,6 +19,8 @@
   position: fixed;
   right: 20px;
   border: 1px solid white;
+  background: #2A6B41;
+  color: #D0EFDB;
 }
 
 .bottom100 {
@@ -46,8 +48,8 @@
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #333;
-  color: white;
+  background-color: #ffffff;
+  color: #2A6B41;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -61,12 +63,18 @@
 .completeButton {
   margin-left: auto;
   color: #ffffff;
-  background-color: #4CAF50;
+  background-color: #2A6B41;
+}
+
+.deleteButton {
+  margin-left: auto;
+  color: #2A6B41;
+  background-color: #D0EFDB;
 }
 
 
 .whiteText {
-  color: white;
+  color: #2A6B41;
 }
 
 .darkBackground {
