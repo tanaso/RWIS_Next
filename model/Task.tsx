@@ -1,5 +1,5 @@
 import { TaskPeriod, TaskPeriodStrategy } from "./TaskPeriod";
-import { TaskBuilder } from "../model/TaskBuilder";
+import { TaskBuilder } from "@/model/TaskBuilder";
 
 export class Task {
     id?: number;

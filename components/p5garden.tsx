@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
-import db from '../lib/db';
+import {db} from '@/lib/db';
 
 interface P5CanvasProps {
     // Additional props if needed

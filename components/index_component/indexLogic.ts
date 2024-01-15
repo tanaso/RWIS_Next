@@ -1,5 +1,5 @@
 import { Task } from "@/model/Task";
-import { getAllTasks, deleteTaskById, getTaskById } from "../../repository/taskRepository";
+import { getAllTasks, deleteTaskById, getTaskById } from "@/repository/taskRepository";
 import { addPoints } from "@/repository/userRepository";
 export const toggleAddButtonsVisibility = (isButtonClickable: boolean, setIsButtonClickable: React.Dispatch<React.SetStateAction<boolean>>) => {
     setIsButtonClickable(!isButtonClickable);

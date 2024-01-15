@@ -1,7 +1,7 @@
 import Dexie, { Table } from 'dexie';
-import { Task } from '../model/Task';
-import { Flower } from '../model/Flower';
-import { User } from '../model/User';
+import { Task } from '@/model/Task';
+import { Flower } from '@/model/Flower';
+import { User } from '@/model/User';
 import { Category } from '@/model/Category';
 
 // Extend Dexie class with typed tables

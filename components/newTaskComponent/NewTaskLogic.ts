@@ -1,5 +1,5 @@
 import { TaskPeriod, TaskPeriodStrategy } from "@/model/TaskPeriod";
-import { Task } from "../../model/Task";
+import { Task } from "@/model/Task";
 import { addNewTask } from "@/repository/taskRepository";
 
 export const SEED_RATIO = 0.5;
