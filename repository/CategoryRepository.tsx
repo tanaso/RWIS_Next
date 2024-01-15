@@ -7,4 +7,5 @@ export function getAllCategories(): Promise<Category[]> {
 
 export function addNewCategory(category: Category): Promise<number> {
     return db.categories.add(category);
+    
 }
