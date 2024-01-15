@@ -1,4 +1,4 @@
-import { addNewCategory, getAllCategories } from "../../repository/categoryRepository";
+import { addNewCategory, getAllCategories } from "../../repository/CategoryRepository";
 import { Category } from "../../model/Category";
 
 export const newCategoryLogic = async(name : string) => {
