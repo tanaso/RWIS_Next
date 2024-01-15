@@ -5,6 +5,16 @@ export const toggleAddButtonsVisibility = (isButtonClickable: boolean, setIsButt
     setIsButtonClickable(!isButtonClickable);
 };
 
+export const newTask = (setTasks: React.Dispatch<React.SetStateAction<Task[]>>, task: Task) => {
+    // bulkAddTasks();
+
+    console.log("all tasks: " + getAllTasks());
+};
+
+export const nenewTaskRouter = () => {
+
+}
+
 export const newCategory = (isButtonClickable: boolean, setIsButtonClickable: React.Dispatch<React.SetStateAction<boolean>>) => {
 
 };

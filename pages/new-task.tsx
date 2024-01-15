@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import Page from '@/components/page';
 import Section from '@/components/section';
@@ -10,15 +11,26 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { getAllCategoriesNames } from '@/components/categoryComponent/categoryComponent';
 
+=======
+import React, { useState } from 'react';
+import { formatDate, newTaskLogic } from "../components/newTaskComponent/NewTaskLogic";
+import { format } from 'util';
+import { AddTasks } from '@/repository/taskRepository';
+import { Task } from '../model/Task';
+>>>>>>> ac7cbffce2f85085aed9dd72fb63ded263710982
 
 const NewTask = () => {
     const [name, setName] = useState('');
     const [period, setPeriod] = useState('');
+<<<<<<< HEAD
     const [deadline, setDeadline] = useState('');
     const [error, setError] = useState('');
     const [category, setCategory] = useState('');
     const [categories, setCategories] = useState<string[]>([]);
     const router = useRouter();
+=======
+    const [deadline, setDeadline] = useState(formatDate(new Date()));
+>>>>>>> ac7cbffce2f85085aed9dd72fb63ded263710982
 
     useEffect(() => {
         // Replace this with actual data fetching logic
@@ -30,6 +42,7 @@ const NewTask = () => {
         getCategories();
     }, []);
 
+<<<<<<< HEAD
     const handleNewTaskSubmit = async (event: any) => {
         event.preventDefault();
 
@@ -106,6 +119,62 @@ const NewTask = () => {
                 </form>
             </Section>
         </Page>
+=======
+        // New task object
+        const newTask: Task = {
+            name: name,
+            deadline: deadline,
+            period: period,
+            seedReward: true
+        };
+
+		//call to business logic
+		newTaskLogic({name, period, deadline});
+
+        // Bulk add the new tasks to the table
+        AddTasks();
+
+        // Reset the form fields after submission
+        setName('');
+        setDeadline(formatDate(new Date()));
+        setPeriod('');
+    };
+
+    return (
+        <form onSubmit={handleNewTaskSubmit}>
+            <div>
+                <label htmlFor="taskName">Task Name:</label>
+                <input
+                    id="taskName"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Task Name"
+                />
+            </div>
+            <div>
+                <label htmlFor="deadline">Deadline:</label>
+                <input
+                    id="deadline" 
+					type="date"
+                    value={deadline}
+                    onChange={(e) => setDeadline(new Date(e.target.value).toISOString().split('T')[0])}
+                    placeholder="Deadline"
+                />
+            </div>
+            <div>
+                <label htmlFor="period">Period (in days):</label>
+                <input
+                    id="period"
+                    type="number"
+                    value={period}
+                    onChange={(e) => setPeriod(e.target.value)}
+                    placeholder="Period"
+                />
+            </div>
+            <button type="submit">Create Task</button>
+        </form>
+>>>>>>> ac7cbffce2f85085aed9dd72fb63ded263710982
     );
 };
 

@@ -13,12 +13,20 @@ export class MyDatabase extends Dexie {
 
     constructor() {
         super('myDatabase');
+<<<<<<< HEAD
 
         this.version(8).stores({
             flowers: '++id, position, color, waterPoints',
             users: '++id, waterPoints, numberOfSeeds, cuttingPoints',
             tasks: '++id, name, creationDate, deadline, periodInDays, categoryName, seedReward',
             categories: '++id, &name',
+=======
+        this.version(1).stores({
+            flowers: '++id, position, color, waterPoints',
+            users: '++id, waterPoints, numberOfSeeds, cuttingPoints',
+            tasks: '++id, name, creationDate, deadline, periodInDays, categoryName, seedReward',
+            // categories: ''
+>>>>>>> ac7cbffce2f85085aed9dd72fb63ded263710982
         });
 
         // Connect the class properties with the database tables

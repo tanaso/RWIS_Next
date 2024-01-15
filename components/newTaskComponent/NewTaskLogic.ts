@@ -31,12 +31,16 @@ export const newTaskLogic = async (newTaskDTO: NewTaskDTO) => {
         .setSeedReward(randomBoolean())
         .build();
 
+<<<<<<< HEAD
     try {
         await addNewTask(newTask);
         console.log('Task created');
     } catch (error: any) {
         throw new Error('Error creating task: ' + error.message);
     }
+=======
+    console.log("New task created: " + newTask);
+>>>>>>> ac7cbffce2f85085aed9dd72fb63ded263710982
 };
 
 
