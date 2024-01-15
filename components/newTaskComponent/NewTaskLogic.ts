@@ -6,11 +6,15 @@ export const SEED_RATIO = 0.5;
 
 export const newTaskLogic = async (newTaskDTO: NewTaskDTO) => {
     let period;
-    try {
-        period = parseInt(newTaskDTO.period);
-        if (isNaN(period)) throw new Error("Invalid period. Please enter a number.");
-    } catch (error) {
-        throw new Error("The inputted period is not a number: " + newTaskDTO.period);
+    if(newTaskDTO.period.trim() === ""){
+        period = 0;
+    }else{
+        try {
+            period = parseInt(newTaskDTO.period);
+            if (isNaN(period)) throw new Error("Invalid period. Please enter a number.");
+        } catch (error) {
+            throw new Error("The inputted period is not a number: " + newTaskDTO.period);
+        }
     }
 
     let taskPeriod = new TaskPeriod(period, TaskPeriodStrategy.DAYS);
