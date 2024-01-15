@@ -51,11 +51,11 @@ export async function addCuttingPoint() {
     incrementCuttingPoint(1);
 }
 
-export async function removeWaterPoint() {
+export async function removeWaterPointFromUser() {
     incrementWaterPoint(-1);
 }
 
-export async function removeCuttingPoint() {
+export async function removeCuttingPointFromUser() {
     incrementCuttingPoint(-1);
 }
 
