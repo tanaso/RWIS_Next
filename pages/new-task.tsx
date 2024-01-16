@@ -93,6 +93,7 @@ const NewTask = () => {
                         fullWidth
                         variant="outlined"
                         className={styles.whiteText}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     >
                         <MenuItem value="" disabled>
                             Select a Category
@@ -104,7 +105,7 @@ const NewTask = () => {
                         ))}
                     </Select>
                     {error && <div className={styles.errorMessage}>{error}</div>}
-                    <Button type="submit" variant="contained" color="primary" className={styles.whiteText}>
+                    <Button type="submit" variant="contained" color="primary" style={{  border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}>
                         Create Task
                     </Button>
                 </form>
