@@ -85,10 +85,7 @@ return (
           </div>
   
          
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px', position: 'absolute', bottom: 50, left: '50%', transform: 'translateX(-50%)' }}>
-        <img src="./images/grass.png" style={{ width: '240px', height: '119px', marginRight: '0px' }} />
-        <img src="./images/grass.png" style={{ width: '240px', height: '119px', marginLeft: '0px' }} />
-        </div>
+        
 
   
         </Section>
