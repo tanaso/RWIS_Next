@@ -4,9 +4,14 @@
 	"description": "Personal Task Management application with gamification",
 	"icons": [
 		{
-			"src": "/images/logo/iris_logo_onlys.jpg",
-			"type": "image/jpg",
+			"src": "/images/logo/iris_logo_onlys.png",
+			"type": "image/png",
 			"sizes": "192x192"
+		},
+		{
+			"src": "/images/logo/iris_logo_onlys.png",
+			"type": "image/png",
+			"sizes": "512x512"
 		}
 	],
 	"start_url": "/",
