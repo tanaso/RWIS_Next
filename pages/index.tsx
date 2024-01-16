@@ -67,11 +67,11 @@ const Index = () => {
 				</Fab>
 				{isButtonClickable && (
 					<>
-						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
+						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" style={{ position: 'fixed', right: '20px', bottom: '170px', border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}>
 							<AddIcon />
 							<span className='fabText'>New Task</span>
 						</Fab>
-						<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom240}`}>
+						<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" style={{ position: 'fixed', right: '20px', bottom: '240px', border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}>
 							<AddIcon />
 							<span className='fabText'>New Category</span>
 						</Fab>
