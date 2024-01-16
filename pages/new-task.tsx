@@ -43,6 +43,7 @@ const NewTask = () => {
     };
 
     return (
+        <div style={{ backgroundColor: '#D0EFDB', height:"100vh" }}>
         <Page>
             <Section>
                 <form onSubmit={handleNewTaskSubmit} className={`${styles.formStyle} ${styles.whiteText}`}>
@@ -57,6 +58,7 @@ const NewTask = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
                     <TextField
                         id="deadline"
@@ -69,6 +71,7 @@ const NewTask = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText, shrink: true }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
                     <TextField
                         id="period"
@@ -81,6 +84,7 @@ const NewTask = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
                     <Select
                         value={category}
@@ -89,6 +93,7 @@ const NewTask = () => {
                         fullWidth
                         variant="outlined"
                         className={styles.whiteText}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     >
                         <MenuItem value="" disabled>
                             Select a Category
@@ -100,12 +105,13 @@ const NewTask = () => {
                         ))}
                     </Select>
                     {error && <div className={styles.errorMessage}>{error}</div>}
-                    <Button type="submit" variant="contained" color="primary" className={styles.whiteText}>
+                    <Button type="submit" variant="contained" style={{ border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}>
                         Create Task
                     </Button>
                 </form>
             </Section>
         </Page>
+        </div>
     );
 };
 

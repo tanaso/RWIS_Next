@@ -51,25 +51,28 @@ const Index = () => {
 					{tasks.map(task => (
 						<div key={task.id} className={styles.taskItem}>
 							<span>{task.name} - {task.categoryName}</span>
-							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} className={styles.completeButton}>
+							<Button variant="contained" color="primary" onClick={() => handleCompleteTask(task.id)} style={{ border: '1px solid white', background: '#2A6B41', color: '#FFFFFF' }}>
 								Complete
 							</Button>
-							<Button variant="contained" color="primary" onClick={() => handleDeleteTask(task.id)} className = {styles.deleteButton} >
+							<Button variant="contained" color="primary" onClick={() => handleDeleteTask(task.id)} style={{ border: '1px solid white', background:'#D0EFDB' , color: '#2A6B41' }} >
 								<DeleteIcon />
 							</Button>
 						</div>
 					))}
 				</div>
-				<Fab aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
+				<Fab aria-label="add" onClick={handleAdd} style={{ position: 'fixed', right: '20px', bottom: '100px', border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}
+>
 					<AddIcon />
 				</Fab>
 				{isButtonClickable && (
 					<>
-						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom170}`}>
+						<Fab variant="extended" onClick={handleAddNewTask} color="primary" aria-label="add" style={{ position: 'fixed', right: '20px', bottom: '170px', border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}
+>
 							<AddIcon />
 							<span className='fabText'>New Task</span>
 						</Fab>
-						<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" className={`${styles.fabStyle} ${styles.bottom240}`}>
+						<Fab variant="extended" onClick={handleAddNewCategory} color="primary" aria-label="add" style={{ position: 'fixed', right: '20px', bottom: '240px', border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}
+>
 							<AddIcon />
 							<span className='fabText'>New Category</span>
 						</Fab>
