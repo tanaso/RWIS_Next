@@ -60,7 +60,9 @@ const Index = () => {
 						</div>
 					))}
 				</div>
-				<Fab aria-label="add" onClick={handleAdd} className={`${styles.fabStyle} ${styles.bottom100}`}>
+				<Fab aria-label="add" onClick={handleAdd} style={{ position: 'fixed', right: '20px', bottom: '100px', border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}
+>
+
 					<AddIcon />
 				</Fab>
 				{isButtonClickable && (
