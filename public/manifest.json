@@ -12,5 +12,6 @@
 	"start_url": "/",
 	"orientation": "portrait",
 	"display": "standalone",
-	"scope": "/"
+	"scope": "/",
+	"icon_url": "https://rwis-next.vercel.app/images/logo/iris_logo_onlys.jpg"
 }
