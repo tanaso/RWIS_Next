@@ -7,14 +7,14 @@ import React from 'react';
 
 // Flower data with name, image URL, and locked status
 const flowerData = [
-  { id: 1, name: 'Black Iris', imageUrl: './images/iris/Black.png', locked: false, description: "This flower is a symbol of the elegance of your task management" },
-  { id: 2, name: 'Blue Iris', imageUrl: './images/iris/Blue.png', locked: false, description: "Let's be honest, doing tasks is funnier with a garden" },
-  { id: 3, name: 'Orange Iris', imageUrl: './images/iris/Orange.png', locked: false, description: "Your ambition for doing tasks is growing ! But before climbing a mountain, let's start with a task" },
-  { id: 4, name: 'Pink Iris', imageUrl: './images/iris/Pink.png', locked: false, description: "Nothing is better than a coffee break after doing a task" },
-  { id: 5, name: 'Purple Iris', imageUrl: './images/iris/Purple.png', locked: false, description: "Add a little bit of magic and mystery by randomly picking your next task ! Garden, Garden on my phone, what will be my next task ?" },
-  { id: 6, name: 'Red Iris', imageUrl: './images/iris/Red.png', locked: false, description: "This flower represents your growing energy to complete tasks. Keep going !" },
-  { id: 7, name: 'White Iris', imageUrl: './images/iris/White.png', locked: false, description: "If perfection was real, it would be the way you manage your tasks" },
-  { id: 8, name: 'Yellow Iris', imageUrl: './images/iris/Yellow.png', locked: false, description: "The more tasks you complete, the less you have to do ! Keep that in mind" },
+  { id: 1, name: 'Black Iris', imageUrl: '/images/iris/Black.png', locked: false, description: "This flower is a symbol of the elegance of your task management" },
+  { id: 2, name: 'Blue Iris', imageUrl: '/images/iris/Blue.png', locked: false, description: "Let's be honest, doing tasks is funnier with a garden" },
+  { id: 3, name: 'Orange Iris', imageUrl: '/images/iris/Orange.png', locked: false, description: "Your ambition for doing tasks is growing ! But before climbing a mountain, let's start with a task" },
+  { id: 4, name: 'Pink Iris', imageUrl: '/images/iris/Pink.png', locked: false, description: "Nothing is better than a coffee break after doing a task" },
+  { id: 5, name: 'Purple Iris', imageUrl: '/images/iris/Purple.png', locked: false, description: "Add a little bit of magic and mystery by randomly picking your next task ! Garden, Garden on my phone, what will be my next task ?" },
+  { id: 6, name: 'Red Iris', imageUrl: '/images/iris/Red.png', locked: false, description: "This flower represents your growing energy to complete tasks. Keep going !" },
+  { id: 7, name: 'White Iris', imageUrl: '/images/iris/White.png', locked: false, description: "If perfection was real, it would be the way you manage your tasks" },
+  { id: 8, name: 'Yellow Iris', imageUrl: '/images/iris/Yellow.png', locked: false, description: "The more tasks you complete, the less you have to do ! Keep that in mind" },
 ];
 
 // Define FlowerProps interface for the props

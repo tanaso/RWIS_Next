@@ -1,29 +1,12 @@
 {
 	"name": "Iris",
 	"short_name": "Iris",
-	"description": "Fluffless jasmine rice for those cold winter nights",
+	"description": "Personal Task Management application with gamification",
 	"icons": [
 		{
-			"src": "/images/icon-192.png",
-			"type": "image/png",
-			"sizes": "192x192"
-		},
-		{
-			"src": "/images/icon-512.png",
+			"src": "/images/logo/iris_logo_onlys.jpg",
 			"type": "image/png",
 			"sizes": "512x512"
-		},
-		{
-			"src": "/images/icon-maskable-192.png",
-			"type": "image/png",
-			"sizes": "192x192",
-			"purpose": "maskable"
-		},
-		{
-			"src": "/images/icon-maskable-512.png",
-			"type": "image/png",
-			"sizes": "512x512",
-			"purpose": "maskable"
 		}
 	],
 	"start_url": "/?source=pwa",
