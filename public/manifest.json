@@ -5,11 +5,11 @@
 	"icons": [
 		{
 			"src": "/images/logo/iris_logo_onlys.jpg",
-			"type": "image/png",
-			"sizes": "512x512"
+			"type": "image/jpg",
+			"sizes": "192x192"
 		}
 	],
-	"start_url": "/?source=pwa",
+	"start_url": "/",
 	"orientation": "portrait",
 	"display": "standalone",
 	"scope": "/"
