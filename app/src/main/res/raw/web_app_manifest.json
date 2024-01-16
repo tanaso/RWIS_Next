@@ -1,0 +1,1 @@
+{"name":"Iris","short_name":"Iris","description":"Personal Task Management application with gamification","icons":[{"src":"/images/logo/iris_logo_onlys.jpg","type":"image/jpg","sizes":"192x192"}],"start_url":"/","orientation":"portrait","display":"standalone","scope":"/"}

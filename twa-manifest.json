@@ -1,0 +1,42 @@
+{
+  "packageId": "app.vercel.rwis_next.twa",
+  "host": "rwis-next.vercel.app",
+  "name": "Iris",
+  "launcherName": "Iris",
+  "display": "standalone",
+  "themeColor": "#D0EFDB",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#D0EFDB",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "http://rwis-next.vercel.app/images/logo/iris_logo_onlys.jpg",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "C:\\Users\\david\\RWIS_next\\RWIS_Next\\android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "http://rwis-next.vercel.app/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "http://rwis-next.vercel.app/",
+  "minSdkVersion": 19,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}
