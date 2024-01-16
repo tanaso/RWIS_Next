@@ -26,7 +26,8 @@ const NewCategory = () => {
         <div style={{ backgroundColor: '#D0EFDB', height:"100vh" }}>
         <Page>
             <Section>
-                <form onSubmit={handleNewCategorySubmit} className={`${styles.formStyle} ${styles.whiteText}`}>
+                <form onSubmit={handleNewCategorySubmit} className={`${styles.formStyle} ${styles.whiteText}`} >
+                    
                     <TextField
                         id="categoryName"
                         label="Category Name"
