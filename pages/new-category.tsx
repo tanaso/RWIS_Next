@@ -23,9 +23,11 @@ const NewCategory = () => {
     };
 
     return (
+        <div style={{ backgroundColor: '#D0EFDB', height:"100vh" }}>
         <Page>
             <Section>
-                <form onSubmit={handleNewCategorySubmit} className={`${styles.formStyle} ${styles.whiteText}`}>
+                <form onSubmit={handleNewCategorySubmit} className={`${styles.formStyle} ${styles.whiteText}`} >
+                    
                     <TextField
                         id="categoryName"
                         label="Category Name"
@@ -37,13 +39,15 @@ const NewCategory = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
-                    <Button type="submit" variant="contained" color="primary" className={styles.whiteText}>
+                    <Button type="submit" variant="contained" color="primary" style={{  border: '1px solid white', background: '#2A6B41', color: '#D0EFDB' }}>
                         Create Category
                     </Button>
                 </form>
             </Section>
         </Page>
+        </div>
     );
 };
 

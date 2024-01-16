@@ -43,6 +43,7 @@ const NewTask = () => {
     };
 
     return (
+        <div style={{ backgroundColor: '#D0EFDB', height:"100vh" }}>
         <Page>
             <Section>
                 <form onSubmit={handleNewTaskSubmit} className={`${styles.formStyle} ${styles.whiteText}`}>
@@ -57,6 +58,7 @@ const NewTask = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
                     <TextField
                         id="deadline"
@@ -69,6 +71,7 @@ const NewTask = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText, shrink: true }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
                     <TextField
                         id="period"
@@ -81,6 +84,7 @@ const NewTask = () => {
                         margin="normal"
                         InputLabelProps={{ className: styles.whiteText }}
                         inputProps={{ className: styles.whiteText }}
+                        style={{ backgroundColor: '#FFFFFF' }}
                     />
                     <Select
                         value={category}
@@ -106,6 +110,7 @@ const NewTask = () => {
                 </form>
             </Section>
         </Page>
+        </div>
     );
 };
 
