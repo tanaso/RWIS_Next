@@ -1,8 +1,15 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.vercel.rwis_next.twa",
-        "sha256_cert_fingerprints": ["CC:ED:C2:4A:60:35:CE:11:4E:06:CE:EA:C7:AC:DA:6A:6B:50:1B:C3:C6:1F:7A:FF:30:6C:B4:BF:96:49:4B:37"]
-      }
-    }]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.rwis_next.twa",
+      "sha256_cert_fingerprints": [
+        "CC:ED:C2:4A:60:35:CE:11:4E:06:CE:EA:C7:AC:DA:6A:6B:50:1B:C3:C6:1F:7A:FF:30:6C:B4:BF:96:49:4B:37",
+        "94:91:9B:94:29:FB:79:60:D8:2C:C8:75:21:5E:C4:6B:62:2E:3D:22:11:A0:49:2F:F7:25:97:BB:71:21:79:20"
+      ]
+    }
+  }
+]
